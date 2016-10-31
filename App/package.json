@@ -6,6 +6,7 @@
   "repository": "",
   "scripts": {
     "start": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "ec2": "PORT=36003 nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },

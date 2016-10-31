@@ -43,7 +43,7 @@ class Home extends Component {
     })
     return contents
   }
-  
+
 	render() {
 		return (
 			<div style={comStyles().mainview}>
@@ -55,7 +55,7 @@ class Home extends Component {
         </div>
         <div style={comStyles().input}>
           <input type='text' value={this.state.textValue} onChange={this.handleTextChange.bind(this)} />
-          <button className='btn btn-primary' onClick={this.submitContent.bind(this)}>Add</button>
+          <button className='btn btn-primary' onClick={this.submitContent.bind(this)}>Add To Redux State</button>
         </div>
 			</div>
 		)
