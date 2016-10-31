@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Radium from 'radium'
 
 import { xWhiteSmoke } from '../stylesJS/base_colors'
+import { toggleSideMenu } from '../actions/sideMenuActions'
 
 import SideMenu from './SideMenu/SideMenu'
 import SideIcon from './SideMenu/SideIcon'
@@ -23,12 +24,17 @@ class App extends Component {
       <div style={comStyles().app}>
         {this.renderSideMenu()}
         <div>
-          <div style={comStyles(this.props.sideMenuVisible).shadow}></div>
+          <div onClick={this.props.toggleSideMenu} style={comStyles(this.props.sideMenuVisible).shadow}></div>
           {this.props.children}
         </div>
       </div>
     )
   }
+}
+
+App.propTypes = {
+  toggleSideMenu: React.PropTypes.func.isRequired,
+  sideMenuVisible: React.PropTypes.bool
 }
 
 const RadiumHOC = Radium(App)
@@ -39,15 +45,17 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(RadiumHOC)
+export default connect(mapStateToProps, {toggleSideMenu})(RadiumHOC)
 
 // ================================
 
 const comStyles = (sideMenuVisible) => {
   let paramCSS = {
+    display: "none",
     backgroundColor: "rgba(0,0,0,0)"
   }
   if(sideMenuVisible){
+    paramCSS.display = "flex"
     paramCSS.backgroundColor = "rgba(0,0,0,0.3)"
     paramCSS.transition = "background-color 0.5s ease"
   }

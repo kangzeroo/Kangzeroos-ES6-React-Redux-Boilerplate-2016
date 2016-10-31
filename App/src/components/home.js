@@ -48,7 +48,8 @@ class Home extends Component {
 		return (
 			<div style={comStyles().mainview}>
         <div style={contentStyles().tray}>
-          <h2 style={contentStyles().header}>List of Content</h2>
+          <h1 style={contentStyles().header}>Kangzeroos</h1>
+          <h3 style={contentStyles().header}>ES6 React-Redux Boilerplate</h3>
           <div style={contentStyles().list}>
             {this.renderContent()}
           </div>
