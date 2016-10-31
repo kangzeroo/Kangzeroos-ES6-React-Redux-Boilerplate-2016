@@ -83,7 +83,6 @@ export default connect(mapStateToProps, {addValueToContent})(RadiumHOC)
 const comStyles = () => {
   return {
     mainview: {
-      border: "3px solid black",
       backgroundColor: xWhiteSmoke,
       padding: "20px",
       margin: "auto",

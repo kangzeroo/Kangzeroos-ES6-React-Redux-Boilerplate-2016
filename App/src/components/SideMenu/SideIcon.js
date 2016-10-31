@@ -8,7 +8,7 @@ class SideIcon extends Component {
 
 	render() {
 		return (
-			<div onClick={this.props.toggleSideMenu} style={comStyles(this.props.enterMode).icon}>
+			<div onClick={this.props.toggleSideMenu} style={comStyles(this.props.sideMenuVisible).icon}>
 				<i className='ion-navicon-round'></i>
 			</div>
 		)
@@ -17,28 +17,35 @@ class SideIcon extends Component {
 
 SideIcon.propTypes = {
   toggleSideMenu: React.PropTypes.func.isRequired,
-	enterMode: React.PropTypes.bool
+	sideMenuVisible: React.PropTypes.bool
 }
 
 const RadiumHOC = Radium(SideIcon)
 
-export default connect(null, {toggleSideMenu})(RadiumHOC)
+function mapStateToProps(state){
+	return {
+		sideMenuVisible: state.sideMenu.visible
+	}
+}
+
+export default connect(mapStateToProps, {toggleSideMenu})(RadiumHOC)
 
 // ================================
 
-const comStyles = (enterMode) => {
-	let enterCSS
-	if(enterMode){
-		enterCSS = {
-			position: "absolute",
-			margin: "20px 0px 0px 20px",
-			zIndex: "98"
-		}
+const comStyles = (sideMenuVisible) => {
+	let paramsCSS = {
+		position: "absolute",
+		margin: "20px 0px 0px 20px",
+		zIndex: "98"
+	}
+	if(sideMenuVisible){
+		paramsCSS.margin = "0 auto"
+		paramsCSS.zIndex = "100"
 	}
 	return {
 		icon: {
       fontSize: "1.5rem",
-			...enterCSS
+			...paramsCSS
 		}
 	}
 }

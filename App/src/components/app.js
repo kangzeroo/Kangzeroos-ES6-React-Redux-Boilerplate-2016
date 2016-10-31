@@ -9,16 +9,25 @@ import SideIcon from './SideMenu/SideIcon'
 
 class App extends Component {
 
+  // renderSideMenu(){
+  //   if(this.props.sideMenuVisible){
+  //     return (
+  //       <SideMenu />
+  //     )
+  //   }else{
+  //     return (
+  //       <SideIcon enterMode={true} />
+  //     )
+  //   }
+  // }
+
   renderSideMenu(){
-    if(this.props.sideMenuVisible){
-      return (
+    return (
+      <div>
+        {this.props.sideMenuVisible ? null : <SideIcon />}
         <SideMenu />
-      )
-    }else{
-      return (
-        <SideIcon enterMode={true} />
-      )
-    }
+      </div>
+    )
   }
 
   render() {
@@ -48,6 +57,7 @@ const comStyles = () => {
     app: {
       width: "100%",
       height: "100vh",
+      margin: "0",
       backgroundColor: xWhiteSmoke,
     },
     sideMenuIcon: {

@@ -2,18 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Radium from 'radium'
 
-import SideIcon from './SideIcon'
+import SideHeader from './SideHeader'
 import SideOption from './SideOption'
 
 class SideMenu extends Component {
 
 	render() {
 		return (
-			<div style={comStyles().mainview}>
-				<div style={comStyles().header}>
-					<div style={comStyles().menutitle} className='col-md-10'>SideMenu</div>
-					<SideIcon className='col-md-2' />
-				</div>
+			<div id='mainview' style={comStyles(this.props.sideMenuVisible).mainview}>
+				<SideHeader />
         <SideOption text='Home' link='/' />
         <SideOption text='About' link='/about' />
 			</div>
@@ -22,33 +19,43 @@ class SideMenu extends Component {
 }
 
 SideMenu.propTypes = {
+	sideMenuVisible: React.PropTypes.bool
 }
 
 const RadiumHOC = Radium(SideMenu)
 
-export default connect()(RadiumHOC)
+function mapStateToProps(state){
+  return {
+    sideMenuVisible: state.sideMenu.visible
+  }
+}
+
+export default connect(mapStateToProps)(RadiumHOC)
 
 // ================================
 
-const comStyles = () => {
+const comStyles = (sideMenuVisible) => {
+	let paramsCSS = {
+		display: "hidden",
+		width: "0px",
+		overflow: "hidden",
+		backgroundColor: "rgba(0,0,0,0)",
+		color: "rgba(0,0,0,0)"
+	}
+	if(sideMenuVisible){
+		paramsCSS.display = "flex"
+		paramsCSS.width = "25%"
+		paramsCSS.backgroundColor = "rgba(0,0,0,0.8)",
+		paramsCSS.color = "white"
+	}
 	return {
 		mainview: {
-			display: "flex",
 			flexDirection: "column",
-			width: "20%",
-			border: "2px solid black",
 			height: "100vh",
 			position: "absolute",
-			zIndex: "99"
-		},
-		header: {
-			display: "flex",
-			flexDirection: "row",
-			padding: "10px"
-		},
-		menutitle: {
-			textAlign: "center",
-			fontSize: "1.5rem"
+			zIndex: "99",
+			transition: "0.5s",
+			...paramsCSS
 		}
 	}
 }
