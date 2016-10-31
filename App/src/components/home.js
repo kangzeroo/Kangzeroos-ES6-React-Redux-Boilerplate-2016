@@ -63,7 +63,8 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  myContent: React.PropTypes.array.isRequired
+  myContent: React.PropTypes.array.isRequired,
+  addValueToContent: React.PropTypes.func.isRequired
 }
 
 const RadiumHOC = Radium(Home);

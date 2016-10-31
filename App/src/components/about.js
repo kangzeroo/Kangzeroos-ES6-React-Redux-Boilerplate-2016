@@ -6,7 +6,7 @@ class About extends Component {
 
 	render() {
 		return (
-			<div>
+			<div style={comStyles().mainview}>
 				About Page
 			</div>
 		)
@@ -19,3 +19,13 @@ About.propTypes = {
 const RadiumHOC = Radium(About)
 
 export default connect()(RadiumHOC)
+
+// ================================
+
+const comStyles = () => {
+	return {
+		mainview: {
+			textAlign: "center"
+		},
+	}
+}

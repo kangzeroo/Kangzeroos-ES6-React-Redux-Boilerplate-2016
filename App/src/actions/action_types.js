@@ -1,1 +1,3 @@
+export const TOGGLE_SIDEMENU = "TOGGLE_SIDEMENU"
+
 export const ADD_CONTENT = "ADD_CONTENT"
