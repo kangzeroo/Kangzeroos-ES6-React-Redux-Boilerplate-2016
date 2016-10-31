@@ -22,7 +22,10 @@ class App extends Component {
     return (
       <div style={comStyles().app}>
         {this.renderSideMenu()}
-        {this.props.children}
+        <div>
+          <div style={comStyles(this.props.sideMenuVisible).shadow}></div>
+          {this.props.children}
+        </div>
       </div>
     )
   }
@@ -40,7 +43,14 @@ export default connect(mapStateToProps)(RadiumHOC)
 
 // ================================
 
-const comStyles = () => {
+const comStyles = (sideMenuVisible) => {
+  let paramCSS = {
+    backgroundColor: "rgba(0,0,0,0)"
+  }
+  if(sideMenuVisible){
+    paramCSS.backgroundColor = "rgba(0,0,0,0.3)"
+    paramCSS.transition = "background-color 0.5s ease"
+  }
   return {
     app: {
       width: "100%",
@@ -55,6 +65,12 @@ const comStyles = () => {
       position: "absolute",
       margin: "20px 0px 0px 20px",
 			zIndex: "99"
+    },
+    shadow: {
+      width: "100%",
+      height: "100%",
+      position: "absolute",
+      ...paramCSS
     }
   }
 }
