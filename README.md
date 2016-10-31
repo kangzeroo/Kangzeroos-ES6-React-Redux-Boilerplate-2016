@@ -19,7 +19,7 @@ Welcome to the world of ES6 + React! To start playing with next-generation javas
 	- redux-thunk									// Allow async actions in redux
 	- radium										// Programatic CSS via JS written with the component
 	- Docker										// For containerizing the app. This is not a node_module
-	- SideMenu									// A sidemenu component built-in. This is not a node_module
+	- SideMenu										// A sidemenu component built-in. This is not a node_module
 ```
 
 ####Running on AWS EC2####
