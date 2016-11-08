@@ -1,6 +1,8 @@
+// See <App> (ie ../app.js) to read documentation on how a React component works
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Radium from 'radium'
+// `Link` is a react-router component for routing buttons that redirect you to various urls
 import { Link } from 'react-router'
 
 import { toggleSideMenu } from '../../actions/sideMenuActions'

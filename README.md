@@ -1,13 +1,13 @@
 # Kangzeroo's ES6 React-Redux Boilerplate
 
 ###Getting Started###
-Welcome to the world of ES6 + React! To start playing with next-generation javascript, clone this repo, install dependencies and start the npm script:
+Welcome to the world of ES6 + React! To start playing with next-generation javascript, clone this repo, install dependencies and start the npm script with the below terminal commands. The source code is heavily documented, to the point where you can learn React-Redux simply by reading the code comments while playing around with the webapp and in-browser Javascript console.
 
 ```
-	> git clone https://github.com/kangzeroo/Kangzeroos-ES6-React-Redux-Boilerplate.git
-	> cd Kangzeroos-ES6-React-Redux-Boilerplate
-	> npm install
-	> npm start
+	$ git clone https://github.com/kangzeroo/Kangzeroos-ES6-React-Redux-Boilerplate.git
+	$ cd Kangzeroos-ES6-React-Redux-Boilerplate
+	$ npm install
+	$ npm start
 ```
 
 ####This Boilerplate Includes#####
@@ -26,8 +26,9 @@ Welcome to the world of ES6 + React! To start playing with next-generation javas
 For running this webapp on the Amazon Cloud, git clone this repo into your EC2 instance and start up Docker by following the below steps:
 
 ```
-	> git clone https://github.com/kangzeroo/Kangzeroos-ES6-React-Redux-Boilerplate.git
-	>
-	>
-	>
+	$ git clone https://github.com/kangzeroo/Kangzeroos-ES6-React-Redux-Boilerplate.git
+	$ cd Kangzeroos-ES6-React-Redux-Boilerplate
+	$ bash build.sh
+	$ bash run.sh
 ```
+Then check out http://myIPAddress.com to see the app live!

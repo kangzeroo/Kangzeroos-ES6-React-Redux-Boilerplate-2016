@@ -1,3 +1,4 @@
+// See <App> (ie ./app.js) to read documentation on how a React component works
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Radium from 'radium'
@@ -9,14 +10,20 @@ import { addValueToContent } from '../actions/contentActions'
 
 class Home extends Component {
 
+  // We can also store state internally in this <Home> component using `this.state`
+  // we must declare constructor(){super()} to instantiate class attributes, specifically `this.state`
   constructor(){
     super()
+    // this.state is great when you don't want to pollute the Redux state with extra attributes (eg. multi-input forms)
+    // React will re-render upon changes of both React state and this.state
     this.state = {
       textValue: ""
     }
   }
 
   handleTextChange(event){
+    // if we want to change this.state, we must use this.setState()
+    // event is implicitly passed in to this function when called from an HTML <input>
     this.setState({
       textValue: event.target.value
     })
