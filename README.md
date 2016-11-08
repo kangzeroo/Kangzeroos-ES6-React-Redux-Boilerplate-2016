@@ -6,8 +6,9 @@ Welcome to the world of ES6 + React! To start playing with next-generation javas
 ```
 	$ git clone https://github.com/kangzeroo/Kangzeroos-ES6-React-Redux-Boilerplate.git
 	$ cd Kangzeroos-ES6-React-Redux-Boilerplate
+	$ cd App
 	$ npm install
-	$ npm start
+	$ npm run start
 ```
 
 ####This Boilerplate Includes#####
