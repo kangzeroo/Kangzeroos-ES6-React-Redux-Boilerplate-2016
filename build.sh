@@ -1,1 +1,1 @@
-docker build -t Kangzeroo .
+docker build -t kangzeroo .
