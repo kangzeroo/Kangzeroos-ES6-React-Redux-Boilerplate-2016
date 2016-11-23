@@ -13,7 +13,7 @@ RUN npm install -g n
 RUN n stable
 
 # setup working directory
-# ADD /App /App
+ADD /App /App
 WORKDIR /App
 RUN npm install
 
