@@ -8,6 +8,14 @@ import Radium from 'radium'
 class About extends Component {
 
 	render() {
+
+		// someAboutFunction(){
+		// 	someAPI(this.props.something)
+		// 		.then((data)=>{
+		// 			this.props.someAction(data)
+		// 		})
+		// }
+
 		return (
 			<div style={comStyles().mainview}>
 				About Page
