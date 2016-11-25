@@ -43,7 +43,7 @@ class Home extends Component {
     const contents = []
     this.props.myContent.forEach((content)=>{
       contents.push(
-        (<div style={contentStyles().item}>
+        (<div key={content.id} style={contentStyles().item}>
             {content.text}
           </div>)
       )
@@ -51,18 +51,27 @@ class Home extends Component {
     return contents
   }
 
+  goToLink(url){
+    const win = window.open(url, '_blank');
+    win.focus();
+  }
+
 	render() {
 		return (
 			<div style={comStyles().mainview}>
-        <div style={contentStyles().tray}>
-          <h1 style={contentStyles().header}>Kangzeroos</h1>
-          <h3 style={contentStyles().header}>ES6 React-Redux Boilerplate</h3>
+        <div style={comStyles().tray}>
+          <h1 style={comStyles().header}>Kangzeroos</h1>
+          <h3 style={comStyles().header}>ES6 React-Redux Boilerplate</h3>
+          <div style={comStyles().logosBox}>
+            <img src='../../../res/images/react.png' onClick={()=> this.goToLink('https://facebook.github.io/react/docs/hello-world.html')} style={comStyles().logo} />
+            <img src='../../../res/images/redux.png' onClick={()=> this.goToLink('http://redux.js.org/docs/introduction/')} style={comStyles().logo} />
+          </div>
           <div style={contentStyles().list}>
             {this.renderContent()}
           </div>
         </div>
         <div style={comStyles().input}>
-          <input type='text' value={this.state.textValue} onChange={this.handleTextChange.bind(this)} />
+          <input type='text' value={this.state.textValue} onChange={this.handleTextChange.bind(this)} style={comStyles().inputBox} />
           <button className='btn btn-primary' onClick={this.submitContent.bind(this)}>Add To Redux State</button>
         </div>
 			</div>
@@ -96,17 +105,6 @@ const comStyles = () => {
       margin: "auto",
       height: "100%"
     },
-    input: {
-      width: "100%",
-      margin: "10px 0px 0px 0px",
-      display: "flex",
-      justifyContent: "center"
-    }
-  }
-}
-
-const contentStyles = () => {
-  return {
     tray: {
       display: "flex",
       flexDirection: "column"
@@ -114,6 +112,32 @@ const contentStyles = () => {
     header: {
       textAlign: "center",
     },
+    input: {
+      width: "100%",
+      margin: "10px 0px 0px 0px",
+      display: "flex",
+      justifyContent: "center"
+    },
+    inputBox: {
+      padding: "10px"
+    },
+    logosBox: {
+      margin: "auto",
+      height: "30%",
+      dislay: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+    },
+    logo: {
+      width: "200px",
+      display: "inline-block",
+      margin: "50px 20px 20px 20px"
+    }
+  }
+}
+
+const contentStyles = () => {
+  return {
     list: {
       display: "flex",
       flexDirection: "row",

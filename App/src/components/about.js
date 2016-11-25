@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Radium from 'radium'
+// import { someAPI } from '../api/myAPI'
+// import { someAction } from '../actions/contentActions'
 
 class About extends Component {
 
@@ -15,11 +17,22 @@ class About extends Component {
 }
 
 About.propTypes = {
+	// something: React.PropTypes.object,
+	// someAction: React.PropTypes.func.isRequired
+}
+
+function mapStateToProps(state){
+	return {
+		// something: state.something
+	}
 }
 
 const RadiumHOC = Radium(About)
 
-export default connect()(RadiumHOC)
+export default connect(
+	// mapStateToProps,
+	// { someAction }
+)(RadiumHOC)
 
 // ================================
 
