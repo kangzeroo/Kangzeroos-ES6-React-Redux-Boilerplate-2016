@@ -7,21 +7,32 @@ import Radium from 'radium'
 
 class About extends Component {
 
-	render() {
+		// constructor(){
+		// 	super()
+		// 	this.state = {
+		// 		didSomething: false
+		// 	}
+		// }
+
+		// componentWillMount(){
+		// 	console.log("Component is about to mount!")
+		// }
 
 		// someAboutFunction(){
 		// 	someAPI(this.props.something)
 		// 		.then((data)=>{
 		// 			this.props.someAction(data)
+		// 			this.setState({didSomething: true})
 		// 		})
 		// }
 
-		return (
-			<div style={comStyles().mainview}>
-				About Page
-			</div>
-		)
-	}
+		render() {
+			return (
+				<div style={comStyles().mainview}>
+					About Page
+				</div>
+			)
+		}
 }
 
 About.propTypes = {
@@ -47,7 +58,8 @@ export default connect(
 const comStyles = () => {
 	return {
 		mainview: {
-			textAlign: "center"
+			textAlign: "center",
+			padding: "20px"
 		},
 	}
 }

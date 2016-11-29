@@ -7,6 +7,7 @@ import Store from './store'
 import App from './components/app'
 import Home from './components/home'
 import About from './components/about'
+import ReactForm from './components/form'
 
 // This is a component tree that will be injected into index.html <div class='container'></div>
 // The <Provider store={Store}> component is one provided by Redux. The `Store` is imported from `./store.js`
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path='/' component={App}>
         <IndexRoute component={Home} />
         <Route path='about' component={About}></Route>
+        <Route path='form' component={ReactForm}></Route>
       </Route>
   	</Router>
   </Provider>

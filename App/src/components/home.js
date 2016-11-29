@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Radium from 'radium'
 
 import { xWhiteSmoke } from '../stylesJS/base_colors'
-
+import Card from './card'
 import { convertToLowerCase } from '../api/myAPI'
 import { addValueToContent } from '../actions/contentActions'
 
@@ -51,6 +51,14 @@ class Home extends Component {
     return contents
   }
 
+  renderContentAsCards(){
+    const contents = []
+    this.props.myContent.forEach((content)=>{
+      contents.push(<Card content={content} />)
+    })
+    return contents
+  }
+
   goToLink(url){
     const win = window.open(url, '_blank');
     win.focus();
@@ -68,6 +76,7 @@ class Home extends Component {
           </div>
           <div style={contentStyles().list}>
             {this.renderContent()}
+            {/* this.renderContentAsCards() */}
           </div>
         </div>
         <div style={comStyles().input}>
