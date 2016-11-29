@@ -13,11 +13,14 @@ class ReactForm extends Component {
 				name: "",
 				email: "",
 				consent: false,
-				successMessage: "",
-				errorMessage: ""
+				successMessage: "",				// for our success messages to be displayed on screen
+				errorMessage: ""					// for for error messages to be displayed on screen
 			}
 		}
 
+		// a general utility function to change form values
+		// can be used for any text value
+		// attr is passed in using .bind(this, "attr") and event is implictly passed in as a result of an event (such as onChange and onClick)
 		handleFormChange(attr, event){
 			console.log(attr, event.target.value)
 			this.setState({
@@ -25,6 +28,7 @@ class ReactForm extends Component {
 			})
 		}
 
+		// a function to handle any toggling of booleans
 		handleFormToggle(attr){
 			console.log(attr, !this.state[attr])
 			this.setState({
@@ -32,6 +36,8 @@ class ReactForm extends Component {
 			})
 		}
 
+ 		// form submission with input validation
+		// sets error or success messages
 		submitForm(){
 			if(this.state.name == "" || this.state.consent == false){
 				this.setState({
@@ -55,6 +61,8 @@ class ReactForm extends Component {
 			}
 		}
 
+		// render an error or success message based on the React state
+		// conditional statements used throughout this React component determine whether a message will show
 		renderMessage(){
 			if(this.state.errorMessage){
 				return (
