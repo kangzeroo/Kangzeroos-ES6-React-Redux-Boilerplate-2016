@@ -68,7 +68,7 @@ class Home extends Component {
 		return (
 			<div style={comStyles().mainview}>
         <div style={comStyles().tray}>
-          <h1 style={comStyles().header}>Kangzeroo's</h1>
+          <h1 style={comStyles().header}>Kangzeroos</h1>
           <h3 style={comStyles().header}>ES6 React-Redux Boilerplate</h3>
           <div style={comStyles().logosBox}>
             <img src='../../../res/images/react.png' onClick={()=> this.goToLink('https://facebook.github.io/react/docs/hello-world.html')} style={comStyles().logo} />
