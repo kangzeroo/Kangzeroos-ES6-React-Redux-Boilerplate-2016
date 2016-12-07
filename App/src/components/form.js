@@ -187,7 +187,8 @@ const comStyles = () => {
 		},
 		messageClose: {
 			float: "right",
-			fontSize: "1rem"
+			fontSize: "1rem",
+			cursor: "pointer"
 		}
 	}
 }
