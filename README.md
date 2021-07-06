@@ -1,4 +1,4 @@
-# Kangzeroo's ES6 React-Redux Boilerplate 2017
+# Kangzeroo's ES6 React-Redux Boilerplate 2016
 
 ![48665482-02126c80-eaa7-11e8-84e8-b95d0945ab3d](https://user-images.githubusercontent.com/22982964/124559285-24cb3c80-de6e-11eb-8a14-bb5565b0762b.jpeg)
 
