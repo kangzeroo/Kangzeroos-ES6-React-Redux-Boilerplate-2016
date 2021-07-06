@@ -1,4 +1,7 @@
-# Kangzeroo's ES6 React-Redux Boilerplate
+# Kangzeroo's ES6 React-Redux Boilerplate 2017
+
+![48665482-02126c80-eaa7-11e8-84e8-b95d0945ab3d](https://user-images.githubusercontent.com/22982964/124559285-24cb3c80-de6e-11eb-8a14-bb5565b0762b.jpeg)
+
 
 ###Getting Started###
 Welcome to the world of ES6 + React! To start playing with next-generation javascript, clone this repo, install dependencies and start the npm script with the below terminal commands. The source code is heavily documented, to the point where you can learn React-Redux simply by reading the code comments while playing around with the webapp and in-browser Javascript console.
